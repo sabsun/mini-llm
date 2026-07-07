@@ -1,0 +1,20 @@
+
+Python is a programming language.
+
+Artificial Intelligence is changing the world.
+
+Transformers use attention mechanisms.
+
+Neural networks learn from data.
+
+Machine learning is a subset of artificial intelligence.
+
+Deep learning uses multiple neural network layers.
+
+Llama is a decoder only transformer model.
+
+Natural language processing enables machines to understand text.
+
+PyTorch is widely used for deep learning.
+
+Open source models help researchers build AI systems.
