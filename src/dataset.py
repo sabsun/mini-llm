@@ -16,16 +16,19 @@ class LlamaDataset(Dataset):
         y: (seq_len,)
     """
 
-    def __init__(self, tokens, seq_len):
+    def __init__(self, tokens, seq_len, stride=None):
         self.tokens = tokens
         self.seq_len = seq_len
+        self.stride = stride if stride is not None else seq_len
 
     def __len__(self):
-        return len(self.tokens) - self.seq_len
+        return (len(self.tokens) - self.seq_len - 1) // self.stride + 1
 
     def __getitem__(self, index):
-        x = self.tokens[index:index + self.seq_len]
-        y = self.tokens[index + 1:index + self.seq_len + 1]
+
+        start = index * self.stride
+        x = self.tokens[start:start + self.seq_len]
+        y = self.tokens[start + 1:start + self.seq_len + 1]
 
         return (
             torch.tensor(x, dtype=torch.long),

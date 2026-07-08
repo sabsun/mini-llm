@@ -13,3 +13,7 @@ venv/
 .vscode/
 
 *.log
+
+# Datasets
+data/*.txt
+data/*.npy
